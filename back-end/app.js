@@ -12,8 +12,6 @@ app.use(cors()) // allow cross-origin resource sharing
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
-//app.use(express.static('./csImage.jpg')); //to serve images on backend??
-//app.use(express.static('back-end'));
 
 // connect to database
 mongoose
@@ -80,12 +78,6 @@ app.post('/messages/save', async (req, res) => {
     })
   }
 })
-
-//a route for the image??
-app.get('/csImage.jpg', (req, res) => {
-  // Serve the image file located in the same directory as the server script
-  res.sendFile(path.join(__back-end, 'csImage.jpg'));
-});
 
 //a route to handle the "About Me" page
 app.get('/about-us', (req, res) => {
